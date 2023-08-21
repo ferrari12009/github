@@ -8,6 +8,8 @@ ret, thresh = cv.threshold(gray, 215, 265, cv.THRESH_TOZERO_INV) #阈值过滤,�
 contours, hierarchy = cv.findContours(thresh, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
 val1 = []
 val2 = []
+
+
 for i in contours:            #通过计算各轮廓所围成的面积来筛选掉不必要的区域
     area = cv.contourArea(i)
     len = cv.arcLength(i, True)
